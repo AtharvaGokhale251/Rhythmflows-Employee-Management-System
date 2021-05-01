@@ -1,0 +1,102 @@
+<div style="width: 100%; height: 100vh;">
+
+    <div class="form-froup row"  style="width: 60%;">
+
+       <!-- <label class="col-sm-2 col-form-label">Employee ID</label>
+        <div class="col-sm-10">
+            <input required type="text" ngModel #emp_val1="ngModel" class="form-control" [(ngModel)]="EmployeeId" placeholder=emp.EmployeeID>
+            <div class="alert alert-danger" *ngIf="emp_val1.touched && !emp_val1.valid">Employee ID is compulsory field</div>
+        </div>-->
+<br>
+        <label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input required type="text" ngModel #emp_val2="ngModel" class="form-control" [(ngModel)]="Name" placeholder="{{emp3.Name}}">
+            <div class="alert alert-danger" *ngIf="emp_val2.touched && !emp_val2.valid">Name is compulsory field</div>
+        </div>
+<br><br><br>
+        <label class="col-sm-2 col-form-label">Gender</label>
+        <!--<div class="col-sm-10">
+            <input required type="text" ngModel #emp_val3="ngModel" [(ngModel)]="Gender" placeholder="Gender">
+            <div class="alert alert-danger" *ngIf="emp_val3.touched && !emp_val3.valid">Gender is compulsory field</div>
+        </div>-->
+        <div class="col-sm-10">
+        <input type="radio" id="male" name="gender" value="Male" style="height:15px; width:15px;" ngModel #emp_val3="ngModel" class="form-control" [(ngModel)]="Gender" checked>    
+            <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" style="height:15px; width:15px;" ngModel #emp_val3="ngModel" class="form-control" [(ngModel)]="Gender">
+            <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other" style="height:15px; width:15px;" ngModel #emp_val3="ngModel" class="form-control" [(ngModel)]="Gender">
+            <label for="other">Other</label>
+        <!--<div class="alert alert-danger" *ngIf="!emp_val3.touched && !emp_val3.valid">Gender is compulsory field</div>-->
+        </div>
+<br><br><br>
+        <label class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-10">
+            <input required type="text" ngModel #emp_val4="ngModel" class="form-control" [(ngModel)]="Address" placeholder="{{emp3.Address}}">
+            <div class="alert alert-danger" *ngIf="emp_val4.touched && !emp_val4.valid">Address is compulsory field</div>
+        </div>
+<br><br><br>
+        <label class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10">
+            <input required type="tel" ngModel #emp_val5="ngModel" class="form-control" [(ngModel)]="Phone" placeholder="Phone Number" placeholder="{{emp3.Phone}}">
+            <div class="alert alert-danger" *ngIf="emp_val5.touched && !emp_val5.valid">Phone Number is compulsory field</div>
+        </div>
+<br><br><br>
+     <!--   <label class="col-sm-2 col-form-label">Country</label>
+        <div class="col-sm-10">
+            <input required type="text" ngModel #emp_val6="ngModel" class="form-control" [(ngModel)]="Country" placeholder="Country">
+            <div class="alert alert-danger" *ngIf="emp_val6.touched && !emp_val6.valid">Country is compulsory field</div>
+        </div>
+<br><br><br>
+        <label class="col-sm-2 col-form-label">State</label>
+        <div class="col-sm-10">
+            <input required type="text" ngModel #emp_val7="ngModel" class="form-control" [(ngModel)]="State" placeholder="State">
+            <div class="alert alert-danger" *ngIf="emp_val7.touched && !emp_val7.valid">State is compulsory field</div>
+        </div>
+<br><br><br>
+        <label class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+            <input required type="text" ngModel #emp_val8="ngModel" class="form-control" [(ngModel)]="City" placeholder="City">
+            <div class="alert alert-danger" *ngIf="emp_val8.touched && !emp_val8.valid">City is compulsory field</div>
+        </div>-->
+        <label class="col-sm-2 col-form-label">Country</label>
+        <div class="col-sm-10">
+            <!--<input required type="text" ngModel #emp_val6="ngModel" class="form-control" [(ngModel)]="Country" placeholder="Country">-->
+            <select name="countries" required id="countries" ngModel #emp_val6="ngModel" class="form-control" [(ngModel)]="Country" placeholder="Country">
+                <option value="{{emp3.Country}}" ng-selected="selected">Selected: {{emp3.Country}}</option>
+                <option *ngFor="let country of CountryList" value="{{country.Name}}">{{country.Name}}</option>
+             <!--  <option>{{this.CountryList[0].CountryId}}</option>-->
+              </select>
+            <div class="alert alert-danger" *ngIf="emp_val6.touched && !emp_val6.valid">Country is compulsory field</div>
+        </div>
+<br><br><br>
+        <label class="col-sm-2 col-form-label">State</label>
+        <div class="col-sm-10">
+            <!--<input required type="text" ngModel #emp_val7="ngModel" class="form-control" [(ngModel)]="State" placeholder="State">-->
+            <select name="states" required id="states" ngModel #emp_val6="ngModel" class="form-control" [(ngModel)]="State" placeholder="State">
+                <option value="{{emp3.State}}" ng-selected="selected">Selected: {{emp3.State}}</option>
+                <option *ngFor="let state of StateList" value="{{state.Name}}">{{state.Name}}</option>
+             <!--  <option>{{this.CountryList[0].CountryId}}</option>-->
+              </select>
+            <!--<div class="alert alert-danger" *ngIf="emp_val7.touched && !emp_val7.valid">State is compulsory field</div>-->
+        </div>
+<br><br><br>
+        <label class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+            <!--<input required type="text" ngModel #emp_val8="ngModel" class="form-control" [(ngModel)]="City" placeholder="City">-->
+            <select name="cities" required id="cities" ngModel #emp_val6="ngModel" class="form-control" [(ngModel)]="City" placeholder="City">
+                <option value="{{emp3.City}}" ng-selected="selected">Selected: {{emp3.City}}</option>
+                <option *ngFor="let city of CityList" value="{{city.Name}}">{{city.Name}}</option>
+             <!--  <option>{{this.CountryList[0].CountryId}}</option>-->
+              </select>
+           <!-- <div class="alert alert-danger" *ngIf="emp_val8.touched && !emp_val8.valid">City is compulsory field</div>-->
+        </div>
+
+    </div>
+</div>
+<button (click)="checkValidations()" class="btn btn-primary">
+    Add
+</button>   
+
+<button (click)="updateEmployee()" class="btn btn-primary">
+    Update
+</button>
