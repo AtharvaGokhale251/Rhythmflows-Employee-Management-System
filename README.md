@@ -1,6 +1,6 @@
 # Rhythmflows-Employee-Management-System
 This is a miniproject for an Employee Management System. In this, a web application has been designed using the following technology stack-
-Frontend- AngularJS
+Frontend- Angular
 Backend- Django (Python)
 Database- PostgreSQL
 
